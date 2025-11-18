@@ -28,41 +28,22 @@ This commands includes
 <BR>
 • Other IP Commands e.g. show ip route etc.
 <BR>
-## Program
-CLIENT
-```
- import socket 
-from pythonping import ping 
-s=socket.socket() 
-s.bind(('localhost'8000)) 
-s.listen(5) 
-c,addr=s.accept() 
-while True: 
-hostname=c.recv(1024).decode() 
-try: 
-c.send(str(ping(hostname, verbose=False)).encode()) 
-except KeyError: 
-c.send("Not Found".encode())
-```
-SERVER
-```
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-ip=input("Enter the website you want to ping ") 
-s.send(ip.encode()) 
-print(s.recv(1024).decode())
-```
-TRACEROUTE COMMAND
-```
- from scapy.all import*     
-target = ["www.google.com"]     
-result, unans = traceroute(target,maxttl=32) 
-print(result,unans)
-```
-## Output
-<img width="913" height="587" alt="image" src="https://github.com/user-attachments/assets/43045db7-427a-47b2-a3ca-64745d8a94d2" />
+## COMMANDS:
+netstat
+<img width="1041" height="776" alt="Screenshot 2025-11-18 101219" src="https://github.com/user-attachments/assets/0107bd27-c8c0-4359-b16e-6ffa5ee124f4" />
+
+ipconfig
+<img width="1105" height="857" alt="Screenshot 2025-11-18 101302" src="https://github.com/user-attachments/assets/770b65ba-5bae-44ca-aef4-f1f1e2206c55" />
+
+arp
+<img width="1052" height="769" alt="Screenshot 2025-11-18 101313" src="https://github.com/user-attachments/assets/a3b76669-4f1b-43ec-879c-9aaa29af817b" />
+
+arp -a
+
+<img width="658" height="268" alt="Screenshot 2025-11-18 101321" src="https://github.com/user-attachments/assets/666a5888-3b95-4e74-a480-53786e2d5eac" />
+
+ping
+<img width="1014" height="789" alt="Screenshot 2025-11-18 101328" src="https://github.com/user-attachments/assets/fe778606-ac52-4892-a6f5-342486d513c5" />
 
 ## Result
 Thus Execution of Network commands Performed 
